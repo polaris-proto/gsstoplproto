@@ -19,8 +19,8 @@ function exportSheetDataToJson() {
       const dataRange = sheets[i].getRange(1, 1, lastRow, lastColumn);
       const dataValues = dataRange.getValues();
       const fileName = sheets[i].getName();
-      const iss = sheets[i].getRange(1,2).getValue();
-      const isc = sheets[i].getRange(1,3).getValue();
+      const iss = sheets[i].getRange(1,3).getValue();
+      const isc = sheets[i].getRange(1,2).getValue();
       let body = []
       for (let k = 2; k < lastRow; k++) {
         const rowData = dataValues[k];
