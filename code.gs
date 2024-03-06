@@ -40,9 +40,9 @@ function exportSheetDataToJson() {
       }
       const data = {
         "projectCode": sheets[0].getRange(1,2).getValue(),
-	      "programName": fileName.split('.')[1],
-	      "programIndex": i-1,
-	      "programNumber": `${fileName.split('.')[0]}.`,
+	      "layerName": fileName.split('.')[1],
+	      "layerIndex": i-1,
+	      "layerNumber": `${fileName.split('.')[0]}.`,
 	      "stt": sheets[i].getRange(1,4).getValue(),
 	      "end": sheets[i].getRange(1,5).getValue(),
 	      "aud": sheets[0].getRange(4,2).getValue(),
