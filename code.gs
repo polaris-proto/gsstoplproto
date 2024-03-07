@@ -9,7 +9,7 @@ function exportSheetDataToJson() {
         "projectName": sheets[0].getRange(2,2).getValue(),
         "projectDate": sheets[0].getRange(3,2).getValue(),
         "aud": sheets[0].getRange(4,2).getValue(),
-        "col": sheets[0].getRange(5, 2, 1, sheets[0].getLastColumn() - 1).getValues()
+        "col": sheets[0].getRange(5, 2, 1, sheets[0].getLastColumn() - 1).getValues()[0]
       }
       const jsonFile = DriveApp.createFile(`plproto/${fileName}`, JSON.stringify(data));
       Logger.log("PLProto:Metaデータが作成されました。ファイル名: " + jsonFile.getName());
@@ -42,7 +42,7 @@ function exportSheetDataToJson() {
         "projectCode": sheets[0].getRange(1,2).getValue(),
 	      "layerName": fileName.split('.')[1],
 	      "layerIndex": i-1,
-	      "layerNumber": `${fileName.split('.')[0]}.`,
+	      "layerNumber": `${fileName.split('.')[0]}`,
 	      "stt": sheets[i].getRange(1,4).getValue(),
 	      "end": sheets[i].getRange(1,5).getValue(),
 	      "aud": sheets[0].getRange(4,2).getValue(),
